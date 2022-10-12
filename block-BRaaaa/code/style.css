@@ -81,3 +81,11 @@ input{
     margin: 4rem;
     border-radius: 18px;
 }
+
+.movie_List{
+  text-align: center;
+  padding: 0.8rem;
+  margin: 2rem;
+  font-size: 1rem;
+  border: 2px solid green;
+}
