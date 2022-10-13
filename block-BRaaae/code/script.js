@@ -31,17 +31,15 @@ function handleChange(event){
     createMovieUi(allMovies, rootEle);
 }
 
-let createElement =  React.createElement;
 
 function createMovieUi(data,root){
-    // rootEle.innerHTML = '';
-    let ui = data.map((movie,i) => {
-        let btn = createElement('button',{id:i,onclick:handleChange},movie.watched ? 'wathed' : 'TO watche');
+     data.map((movie,i) => {
+        let btn = React.createElement('button',{id:i,onclick:handleChange},movie.watched ? 'wathed' : 'TO watche');
         // btn.addEventListener('click',handleChange);
-        let li = createElement(
+        let li = React.createElement(
         'li',
         null,
-        createElement('label',{for:i},movie.name),btn
+        React.createElement('label',{for:i},movie.name),btn
         );
         // let button = document.createElement('button');
         // button.id = i;
@@ -50,9 +48,8 @@ function createMovieUi(data,root){
         // let label = document.createElement('label');
         // label.for = i;
         // label.innerText = movie.name;
-        
+        ReactDOM.render(li,root)
     });
-    ReactDOM.render(ui,root)
 }
 
 createMovieUi(allMovies, rootEle);
