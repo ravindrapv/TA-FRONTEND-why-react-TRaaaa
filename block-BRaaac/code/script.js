@@ -35,19 +35,44 @@ function handleChange(event){
 function createMovieUi(data,root){
     rootEle.innerHTML = '';
     data.forEach((movie,i) => {
-        let li = document.createElement('li');
-        let button = document.createElement('button');
-        button.id = i;
-        button.innerText = movie.watched ? 'wathed' : 'TO watche';
-        button.addEventListener('click',handleChange);
-        let label = document.createElement('label');
-        label.for = i;
-        label.innerText = movie.name;
-
-        li.append(label, button);
-
+        let btn = createElement('button',{id:i,onclick:handleChange},movie.watched ? 'wathed' : 'TO watche');
+        // btn.addEventListener('click',handleChange);
+        let li = createElement(
+        'li',
+        null,
+        createElement('label',{for:i},movie.name),btn
+        );
+        // let button = document.createElement('button');
+        // button.id = i;
+        // button.innerText = movie.watched ? 'wathed' : 'TO watche';
+        // button.addEventListener('click',handleChange);
+        // let label = document.createElement('label');
+        // label.for = i;
+        // label.innerText = movie.name;
         rootEle.append(li);
     });
 }
 
 createMovieUi(allMovies, rootEle);
+
+
+function createElement(type,attr ={}, ...children){
+    let element = document.createElement(type);
+    for (const key in attr) {
+        if (key.startsWith('data-')) {
+         element.setAttribute(key,attr[key]);
+        }else{
+            element[key] = attr[key]
+        }
+    }
+    children.forEach((child) => {
+        if(typeof child === 'object'){
+            element.append(child);
+        }
+        if(typeof child === 'string'){
+            let node = document.createTextNode(child);
+            element.append(node);
+        }
+    });
+    return element;
+}
