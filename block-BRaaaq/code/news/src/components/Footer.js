@@ -1,11 +1,11 @@
 function Footer(){
     return (
         <>
-            <Footer>
+            <footer>
                 <p>
                     this is the footer
                 </p>
-            </Footer>
+            </footer>
         </>
     )
 }
