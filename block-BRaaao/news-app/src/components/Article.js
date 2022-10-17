@@ -1,11 +1,11 @@
 
-
 function Article(props){
     return (
         <div className="card">
-        <img src="" alt="article" />
-        <h2>{props.article.title}</h2>
-        <p>{props.article.description}</p>
+        <img src={props.urlToImage} alt="article" />
+        <h2>{props.title}</h2>
+        <p>{props.description}</p>
+        <a href={props.url}>visit all</a>
         </div>
     );
 }

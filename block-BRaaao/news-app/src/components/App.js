@@ -1,7 +1,7 @@
-import Article from "../components/Article";
 import Header from "./Header";
 import Hero from "./Hero";
-import data from "../components/data"
+import Article from "./Article";
+import Articles from "./Articles";
 import Footer from "./Footer";
 
 function App(){
@@ -10,23 +10,12 @@ function App(){
       <div className="main">
         <Header />
         <Hero />
-        <Articles />
         <Article />
+        <Articles />
         <Footer />
       </div>
     </>
   )
 };
-
-function Articles() {
-  return (
-      <div className="articles">
-        {data.map((article) => (
-          <Article key={article.id} {...article} />
-          ))}
-      </div>
-  )
-}
-
 
 export default App;
