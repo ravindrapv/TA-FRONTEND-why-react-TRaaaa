@@ -1,8 +1,13 @@
-function Button() {
+function Button(props) {
+    function GetStyles(){
+        let {type , size} = props
+        return `button btn--color${type} ${size}`
+    }
   return (
     <>
-        <button type="tertiary" className="btn" onClick={() => alert("You Clicked Me!")}>Click me</button>
-        
+        <button className={GetStyles}>
+            {props.label || "button"}
+            </button>
     </>
   );
 }
