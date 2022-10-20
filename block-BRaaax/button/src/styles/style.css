@@ -111,3 +111,50 @@ h1 {
   background-color: #000;
   transition: all 0.2s;
 }
+
+.btn--primary {
+  background-color: #000;
+}
+
+.btn--primary:hover {
+  background-color: #333;
+}
+
+.btn--secondary {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn--secondary:hover {
+  background-color: #ccc;
+}
+
+.btn--small {
+  padding: 1.2rem 2.4rem;
+  font-size: 1.4rem;
+}
+
+.btn--large {
+  padding: 2.4rem 4.8rem;
+  font-size: 1.8rem;
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.btn--rounded {
+  border-radius: 50rem;
+}
+
+.btn--color {
+  background-color: blue;
+}
+
+button{
+    --color--primary: #fff;
+    --color--secondary: rgb(38, 87, 179);
+    --color--tertiary: rgb(68, 197, 74);
+    --color--quaternary: rgb(255, 0, 0);
+}
