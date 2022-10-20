@@ -97,3 +97,24 @@ h1, h2, h3, h4, h5, h6 {
     overflow: auto;
 }
 
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+li{
+    width: 100px;
+}
+
+
+
+.ccard-info{
+    display: flex;
+}
+
+.color-box{
+    width: 100px;
+    height: 50px;
+    border: 2px solid black;
+}
